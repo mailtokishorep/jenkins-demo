@@ -6,11 +6,7 @@ pipeline {
    
    
     stages {
-        stage ('Checkout Java Code'){
-          steps{
-            git branch: 'master', credentialsId: 'Githubpwd', url: 'https://github.com/kul-samples/java_sample_webapp.git'
-          }
-        }
+
 
         
         stage('How are you?') {
