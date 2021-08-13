@@ -1,33 +1,12 @@
 pipeline {
-    agent {
-      label 'Linux Node'
-    }
-   
-   
-   
+    agent any
+
     stages {
-
-stage('Check Docker Version') {
-  steps {
-    sh 'docker version'
-  }
-}
-
-stage('create docker image') {
-  steps {
-    sh '''docker image ls 
-      docker image build .  -f Dockerfile -t kulbhushanmayer/devops:latest
-      docker image ls'''
-  }
-}
-
-stage('push docker image') {
-  steps {
-    sh '''docker login -u ${dockeruser} -p ${dockerpassword}
-    docker push kulbhushanmayer/devops:latest'''
-  }
-}
-        
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
         stage('How are you?') {
             steps {
                 echo 'How are you?'
