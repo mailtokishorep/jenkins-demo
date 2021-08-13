@@ -20,6 +20,13 @@ stage('create docker image') {
       docker image ls'''
   }
 }
+
+stage('push docker image') {
+  steps {
+    sh '''docker login -u ${dockeruser} -p ${dockerpassword}
+    docker push kulbhushanmayer/devops:latest'''
+  }
+}
         
         stage('How are you?') {
             steps {
